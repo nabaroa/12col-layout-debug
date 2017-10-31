@@ -1,0 +1,20 @@
+@total-width: 1128px;
+
+body {
+  position: relative;
+  @media all and(min-width: @total-width) {
+    &:after {
+      content: "";
+      max-width: @total-width;
+      margin: auto;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: ~"calc(50% - @{total-width} / 2)";
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: repeating-linear-gradient(to right, rgba(255,0,0,.2), rgba(255,0,0,.2) 72px, rgba(255,0,0, 0) 72px, rgba(255,0,0, 0) 96px);
+    }
+  }
+}
